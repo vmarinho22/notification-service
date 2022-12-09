@@ -12,8 +12,8 @@ datasource db {
 
 model Notification {
   id         String   @id @default(uuid())
-  source     Int
-  target     Int
+  source     String
+  target     String
   message    String
   visualized Boolean  @default(false)
   createdAt  DateTime @default(now())
