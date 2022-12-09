@@ -8,9 +8,7 @@ import { NotificationRepository } from './repositories/notification.repository';
 export class NotificationsService {
   constructor(private readonly repository: NotificationRepository) {}
 
-  async create(
-    createNotificationDto: CreateNotificationDto,
-  ): Promise<NotificationEntity> {
+  async create(createNotificationDto: CreateNotificationDto): Promise<NotificationEntity> {
     return this.repository.create(createNotificationDto);
   }
 
@@ -24,7 +22,7 @@ export class NotificationsService {
 
   async update(
     id: string,
-    updateNotificationDto: UpdateNotificationDto,
+    updateNotificationDto: UpdateNotificationDto
   ): Promise<NotificationEntity> {
     return this.repository.update(id, updateNotificationDto);
   }

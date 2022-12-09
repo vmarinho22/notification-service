@@ -8,11 +8,9 @@ import { UpdateNotificationDto } from './../dto/update-notification.dto';
 export class NotificationRepository {
   constructor(private readonly prisma: PrismaService) {}
 
-  async create(
-    createNotificationDto: CreateNotificationDto,
-  ): Promise<NotificationEntity> {
+  async create(createNotificationDto: CreateNotificationDto): Promise<NotificationEntity> {
     return this.prisma.notification.create({
-      data: createNotificationDto,
+      data: createNotificationDto
     });
   }
 
@@ -22,16 +20,16 @@ export class NotificationRepository {
 
   async findOne(id: string): Promise<NotificationEntity> {
     return this.prisma.notification.findUnique({
-      where: { id },
+      where: { id }
     });
   }
 
   async update(
     id: string,
-    updateNotificationDto: UpdateNotificationDto,
+    updateNotificationDto: UpdateNotificationDto
   ): Promise<NotificationEntity> {
     const notification = await this.prisma.notification.findUnique({
-      where: { id },
+      where: { id }
     });
 
     if (!notification) {
@@ -40,20 +38,20 @@ export class NotificationRepository {
 
     return this.prisma.notification.update({
       where: { id },
-      data: updateNotificationDto,
+      data: updateNotificationDto
     });
   }
 
   async remove(id: string): Promise<NotificationEntity> {
     const notification = await this.prisma.notification.findUnique({
-      where: { id },
+      where: { id }
     });
 
     if (!notification) {
       throw new NotFoundException(`Notificação com id ${id} não encontrado`);
     }
     return this.prisma.notification.delete({
-      where: { id },
+      where: { id }
     });
   }
 }

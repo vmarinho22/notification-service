@@ -6,6 +6,6 @@ import { NotificationRepository } from './repositories/notification.repository';
 
 @Module({
   controllers: [NotificationsController],
-  providers: [NotificationsService, PrismaService, NotificationRepository],
+  providers: [NotificationsService, PrismaService, NotificationRepository]
 })
 export class NotificationsModule {}
