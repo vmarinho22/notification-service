@@ -39,3 +39,4 @@ lerna-debug.log*
 
 # DB
 prisma/dev.db
+prisma/dev.db-journal
