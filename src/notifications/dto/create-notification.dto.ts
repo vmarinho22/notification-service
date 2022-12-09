@@ -15,9 +15,4 @@ export class CreateNotificationDto {
     message: 'A mensagem deve ser do tipo texto'
   })
   message: string;
-
-  @IsString({
-    message: 'O status da notificação deve ser do tipo booleano'
-  })
-  visualized: boolean;
 }
